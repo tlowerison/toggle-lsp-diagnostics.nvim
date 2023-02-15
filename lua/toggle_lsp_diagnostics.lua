@@ -49,6 +49,14 @@ function M.current_settings(new_settings)
   return settings
 end
 
+function M.settings()
+  local _settings = {}
+  for _, _setting in pairs(M.settings) do
+    _settings[_setting] = M.settings[_setting].value
+  end
+  return _settings
+end
+
 function M.turn_off_diagnostics()
   local settings = {}
   for _, setting in ipairs(SETTABLE) do
