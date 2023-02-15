@@ -49,12 +49,8 @@ function M.current_settings(new_settings)
   return settings
 end
 
-function M.settings()
-  local _settings = {}
-  for _, _setting in pairs(M.settings) do
-    _settings[_setting] = M.settings[_setting].value
-  end
-  return _settings
+function M.are_diagnostics_on()
+  return M.settings.all
 end
 
 function M.turn_off_diagnostics()
